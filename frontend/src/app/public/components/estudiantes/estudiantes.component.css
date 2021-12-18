@@ -51,9 +51,19 @@ button:hover {
 mat-card {
     width: 60%;
     height: auto;
+    border-radius: 8px;
 }
 
 .generaciones {
     width: 100%;
     height: auto;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: center;
+}
+
+mat-card-title {
+    font-size: 40px;
 }

@@ -26,11 +26,13 @@ import { BecasComponent } from './components/procesos-administrativos/becas/beca
 import { DescargasComponent } from './components/procesos-administrativos/descargas/descargas.component';
 import { GeneracionDetailComponent } from './components/estudiantes/generacion-detail/generacion-detail.component';
 import { LoginComponent } from './components/login/login.component';
+import { RepositorioTesisComponent } from './components/repositorio-tesis/repositorio-tesis.component';
 @NgModule({
   declarations: [PublicLayoutComponent, HomeComponent, SelectMasterComponent, GeneralPerfilesComponent, GeneralPlanesEstudioComponent, GeneralObjetivosMetasComponent, RequisitosIngresoComponent, RequisitosPermanenciaComponent, RequisitosEgresoComponent, DocentesComponent, CurriculumDetailComponent, EstudiantesComponent, VinculacionComponent, ContactoComponent, NormasEstatutosComponent, LgacComponent, SeleccionAspirantesComponent, CaracteristicasTesisComponent, BecasComponent,
   DescargasComponent,
   GeneracionDetailComponent,
-  LoginComponent],
+  LoginComponent,
+  RepositorioTesisComponent],
   imports: [
     CommonModule,
     PublicRoutingModule,

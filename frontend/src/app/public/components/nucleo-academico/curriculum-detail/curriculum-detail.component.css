@@ -28,6 +28,7 @@ mat-card-title {
 mat-card-content {
     margin-top: 20px;
     margin-left: 20px;
+    text-align: justify;
 }
 
 p {
@@ -36,4 +37,14 @@ p {
 
 mat-card-actions {
     margin-left: 20px;
+}
+
+a {
+    background-color: rgb(16, 67, 124);
+    color: white;
+    transition: background-color .5s
+}
+
+a:hover {
+    background-color: rgb(44, 89, 141);
 }

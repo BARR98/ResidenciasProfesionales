@@ -13,7 +13,7 @@ import { MaestriasService } from 'src/app/core/services/maestrias/maestrias.serv
 export class CreateComponentComponent implements OnInit {
 
   form: FormGroup;
-
+  newMaster: any
 
   ngOnInit() {
 
@@ -37,6 +37,7 @@ export class CreateComponentComponent implements OnInit {
     this.maestriasService.createMaestria(maestria)
       .subscribe((newMaestria) => {
         console.log(newMaestria);
+        this.newMaster = newMaestria
       });
     this.router.navigate(['/admin/masters-list'])
 
@@ -45,278 +46,273 @@ export class CreateComponentComponent implements OnInit {
 
   private buildForm() {
     this.form = this.formBuilder.group({
-      nombre_maestria: ['',
+      nombre_maestria: ['Esta es información de ejemplo',
         [Validators.required,
         Validators.minLength(10)]],
-      abreviatura_maestria: ['',
+      abreviatura_maestria: ['Esta es información de ejemplo',
         [Validators.required,
         Validators.minLength(3)]],
-      GObjetivoGeneral: ['',
+      GTramites: this.formBuilder.array([
+        this.formBuilder.group({
+          'GTNombre': this.formBuilder.control('Esta es información de ejemplo',),
+          'GTCosto': this.formBuilder.control('Esta es información de ejemplo',),
+        }),
+      ]),
+      GFechas: this.formBuilder.array([
+        this.formBuilder.group({
+          'GFNombreTramite': this.formBuilder.control('Esta es información de ejemplo',),
+          'GFTramiteFecha': this.formBuilder.control('Esta es información de ejemplo',),
+        }),
+      ]),
+      GObjetivoGeneral: ['Esta es información de ejemplo',
         [Validators.required,
         Validators.minLength(10)]],
       GObjetivosEspecificos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(10)])
       ]),
       GMetas: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(10)])
       ]),
-      GPI_start: ['',
+      GPI_start: ['Esta es información de ejemplo',
         [Validators.required,
         Validators.minLength(10)]],
       GPI_conocimientos_basicos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
       GPI_conocimientos_habilidades: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
       GPI_conocimientos_aptitudes_valores: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      GPE_start: ['',
-        [Validators.required,
-        Validators.minLength(5)]],
+      GPE_start: ['Esta es información de ejemplo'],
       GPE_capacidades: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
       GPE_competencias: this.formBuilder.array([
-        this.formBuilder.control('', [Validators.required,
+        this.formBuilder.control('Esta es información de ejemplo', [Validators.required,
         Validators.minLength(5)])
       ]),
       GPE_conocimientos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
       GPE_habilidades: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
       GPE_aptitudes: this.formBuilder.array([
-        this.formBuilder.control('', [Validators.required,
+        this.formBuilder.control('Esta es información de ejemplo', [Validators.required,
         Validators.minLength(5)])
       ]),
-      GPES_objetivo_general: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      GPES_objetivo_general: this.formBuilder.control('Esta es información de ejemplo'),
       GPES_objetivos_especificos: this.formBuilder.array([
-        this.formBuilder.control('', [Validators.required,
+        this.formBuilder.control('Esta es información de ejemplo', [Validators.required,
         Validators.minLength(5)])
       ]),
-      GPES_star: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      GPES_star: this.formBuilder.control('Esta es información de ejemplo'),
       GPES_metas: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      GPES_vision: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      GPES_vision: this.formBuilder.control('Esta es información de ejemplo'),
       GPESAB_datos: this.formBuilder.array([
         this.formBuilder.group({
-          'clave_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)]),
-          'nombre_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)]),
-          'enlace_temario_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)])
+          'clave_materia': this.formBuilder.control('Esta es información de ejemplo',),
+          'nombre_materia': this.formBuilder.control('Esta es información de ejemplo',),
+          'enlace_temario_materia': this.formBuilder.control('Esta es información de ejemplo',)
         }),
       ]),
       GPESAO_datos: this.formBuilder.array([
         this.formBuilder.group({
-          'clave_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)]),
-          'nombre_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)]),
-          'enlace_temario_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)])
+          'clave_materia': this.formBuilder.control('Esta es información de ejemplo',),
+          'nombre_materia': this.formBuilder.control('Esta es información de ejemplo',),
+          'enlace_temario_materia': this.formBuilder.control('Esta es información de ejemplo',)
         }),
       ]),
       GPES_seminario_tesis: this.formBuilder.array([
         this.formBuilder.group({
-          'clave_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)]),
-          'nombre_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)]),
-          'enlace_temario_materia': this.formBuilder.control('', [
-            Validators.required,
-            Validators.minLength(5)])
+          'clave_materia': this.formBuilder.control('Esta es información de ejemplo',),
+          'nombre_materia': this.formBuilder.control('Esta es información de ejemplo',),
+          'enlace_temario_materia': this.formBuilder.control('Esta es información de ejemplo',)
         }),
       ]),
-      GLGAC: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
-      GPSA_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      GLGAC: this.formBuilder.control('Esta es información de ejemplo'),
+      GPSA_start: this.formBuilder.control('Esta es información de ejemplo'),
       GPSA_requisitos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      GCT_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      GCT_start: this.formBuilder.control('Esta es información de ejemplo'),
       GCT_requisitos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      PARI_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      PARI_start: this.formBuilder.control('Esta es información de ejemplo'),
       PARI_requisitos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      PARI_documentacion_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      PARI_documentacion_start: this.formBuilder.control('Esta es información de ejemplo'),
       PARI_documentos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      PARP_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      PARP_start: this.formBuilder.control('Esta es información de ejemplo'),
       PARP_requisitos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      PARE_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      PARE_start: this.formBuilder.control('Esta es información de ejemplo'),
       PARE_requisitos: this.formBuilder.array([
-        this.formBuilder.control('', [Validators.required])
+        this.formBuilder.control('Esta es información de ejemplo', [Validators.required])
       ]),
-      PARE_obtencion_grado_start: this.formBuilder.control('', [Validators.required]),
+      PARE_obtencion_grado_start: this.formBuilder.control('Esta es información de ejemplo', [Validators.required]),
       PARE_obtencion_grado_requisitos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
-      PAB_start: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      PAB_start: this.formBuilder.control('Esta es información de ejemplo'),
       PAB_requisitos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)])
       ]),
       PADescargas: this.formBuilder.array([
         this.formBuilder.group({
-          'Descargas_nombre': this.formBuilder.control('',
+          'Descargas_nombre': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'Descargas_enlace': this.formBuilder.control('',
+          'Descargas_enlace': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
         })
       ]),
       NADocentes: this.formBuilder.array([
         this.formBuilder.group({
-          'DNombre': this.formBuilder.control('',
+          'DNombre': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'DGrado_academico': this.formBuilder.control('',
+          'DGrado_academico': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'DTiempo': this.formBuilder.control('',
+          'DTiempo': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'DEspecialidad': this.formBuilder.control('',
+          'DEspecialidad': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'DCurriculum': this.formBuilder.control('',
+          'DCurriculum': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(5)])
+        })
+      ]),
+      NARepositorio_tesis: this.formBuilder.array([
+        this.formBuilder.group({
+          'DTitulo': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(5)]),
+          'DTipo': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(5)]),
+          'DAutores': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(5)]),
+          'DFecha': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(5)]),
+          'DResumen': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(5)]),
+          'DEnlace': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)])
         })
       ]),
       Estudiante: this.formBuilder.array([
         this.formBuilder.group({
-          'generacion': this.formBuilder.control('',
-          [Validators.required,
-          Validators.minLength(1)]),
-          'ENombre': this.formBuilder.control('',
+          'generacion': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(1)]),
+          'ENombre': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'ETema_tesis': this.formBuilder.control('',
+          'ETema_tesis': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'ETutor': this.formBuilder.control('',
+          'ETutor': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'EDirector_tesis': this.formBuilder.control('',
+          'EDirector_tesis': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)])
         })
 
       ]),
-      VInformacion: this.formBuilder.control('',
-        [Validators.required,
-        Validators.minLength(5)]),
+      VInformacion: this.formBuilder.control('Esta es información de ejemplo'),
       VConvenios: this.formBuilder.array([
         this.formBuilder.group({
-          'convenio_nombre': this.formBuilder.control('',
-          [Validators.required,
-          Validators.minLength(10)]),
-          'convenio_enlace': this.formBuilder.control('',
-          [Validators.required,
-          Validators.minLength(10)])
+          'convenio_nombre': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(10)]),
+          'convenio_enlace': this.formBuilder.control('Esta es información de ejemplo',
+            [Validators.required,
+            Validators.minLength(10)])
 
         })
       ]),
       CTelefonos: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)]),
       ]),
       CRedes: this.formBuilder.array([
         this.formBuilder.group({
-          'RNombre': this.formBuilder.control('',
+          'RNombre': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'RCuenta': this.formBuilder.control('',
+          'RCuenta': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)])
         })
       ]),
       CDireccion: this.formBuilder.array([
-        this.formBuilder.control('',
+        this.formBuilder.control('Esta es información de ejemplo',
+          [Validators.required,
+          Validators.minLength(5)]),
+      ]),
+      CCorreo: this.formBuilder.array([
+        this.formBuilder.control('Esta es información de ejemplo',
           [Validators.required,
           Validators.minLength(5)]),
       ]),
       NEInformacion: this.formBuilder.array([
         this.formBuilder.group({
-          'NENombre': this.formBuilder.control('',
+          'NENombre': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)]),
-          'NEEnlace': this.formBuilder.control('',
+          'NEEnlace': this.formBuilder.control('Esta es información de ejemplo',
             [Validators.required,
             Validators.minLength(5)])
         })
@@ -328,7 +324,15 @@ export class CreateComponentComponent implements OnInit {
 
   }
 
-  get GMetas(){
+  get GTramites() {
+    return this.form.get('GTramites') as FormArray
+  }
+
+  get GFechas() {
+    return this.form.get('GFechas') as FormArray
+  }
+
+  get GMetas() {
     return this.form.get('GMetas') as FormArray
   }
 
@@ -451,6 +455,10 @@ export class CreateComponentComponent implements OnInit {
     return this.form.get('NADocentes') as FormArray
   }
 
+  get NARepositorio_tesis(): FormArray {
+    return this.form.get('NARepositorio_tesis') as FormArray
+  }
+
   get PADescargas(): FormArray {
     return this.form.get('PADescargas') as FormArray
   }
@@ -478,14 +486,53 @@ export class CreateComponentComponent implements OnInit {
     return this.form.get('CDireccion') as FormArray
   }
 
+  get CCorreo(): FormArray {
+    return this.form.get('CCorreo') as FormArray
+  }
+
   get NEInformacion(): FormArray {
     return this.form.get('NEInformacion') as FormArray
   }
 
 
 
+
+  addGTramite() {
+    let tramitesArr = this.form.get('GTramites') as FormArray;
+    let newTramite = this.formBuilder.group({
+      'GTNombre': this.formBuilder.control('Esta es información de ejemplo',),
+      'GTCosto': this.formBuilder.control('Esta es información de ejemplo',),
+    })
+
+    tramitesArr.push(newTramite)
+
+
+  }
+
+  deleteGTramite(i: number) {
+    this.GTramites.removeAt(i)
+  }
+
+  addGFechas() {
+    let fechasArr = this.form.get('GFechas') as FormArray;
+    let newFecha = this.formBuilder.group({
+      'GFNombreTramite': this.formBuilder.control('Esta es información de ejemplo',),
+      'GFTramiteFecha': this.formBuilder.control('Esta es información de ejemplo',),
+    })
+
+    fechasArr.push(newFecha)
+
+
+  }
+
+  deleteGFechas(i: number) {
+    this.GFechas.removeAt(i)
+  }
+
+
+
   agregarGObjetivosEspecificos() {
-    this.GObjetivosEspecificos.push(this.formBuilder.control('', [Validators.required]))
+    this.GObjetivosEspecificos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGObjetivosEspecificos(i: number) {
@@ -493,7 +540,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGMetas() {
-    this.GMetas.push(this.formBuilder.control('', [Validators.required]))
+    this.GMetas.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGMetas(i: number) {
@@ -501,7 +548,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarConocimientoBasico() {
-    this.GPI_conocimientos_basicos.push(this.formBuilder.control('', [Validators.required]))
+    this.GPI_conocimientos_basicos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPIConocimientosBasicos(i: number) {
@@ -509,7 +556,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarHabilidad() {
-    this.GPI_conocimientos_habilidades.push(this.formBuilder.control('', [Validators.required]))
+    this.GPI_conocimientos_habilidades.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteHabilidad(i: number) {
@@ -517,7 +564,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarAptitudValor() {
-    this.GPI_conocimientos_aptitudes_valores.push(this.formBuilder.control('', [Validators.required]))
+    this.GPI_conocimientos_aptitudes_valores.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteAptitudValor(i: number) {
@@ -525,7 +572,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPECapacidad() {
-    this.GPE_capacidades.push(this.formBuilder.control('', [Validators.required]))
+    this.GPE_capacidades.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPECapacidades(i: number) {
@@ -533,7 +580,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPECompetencia() {
-    this.GPE_competencias.push(this.formBuilder.control('', [Validators.required]))
+    this.GPE_competencias.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPECompetencias(i: number) {
@@ -541,7 +588,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPEConocimiento() {
-    this.GPE_conocimientos.push(this.formBuilder.control('', [Validators.required]))
+    this.GPE_conocimientos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPEConocimientos(i: number) {
@@ -549,7 +596,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPEHabilidad() {
-    this.GPE_habilidades.push(this.formBuilder.control('', [Validators.required]))
+    this.GPE_habilidades.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
 
@@ -559,7 +606,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPEAptitud() {
-    this.GPE_aptitudes.push(this.formBuilder.control('', [Validators.required]))
+    this.GPE_aptitudes.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPEAptitudes(i: number) {
@@ -567,7 +614,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPESObjetivoEspecificos() {
-    this.GPES_objetivos_especificos.push(this.formBuilder.control('', [Validators.required]))
+    this.GPES_objetivos_especificos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPESObjetivoEspecificos(i: number) {
@@ -575,7 +622,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGPESMeta() {
-    this.GPES_metas.push(this.formBuilder.control('', [Validators.required]))
+    this.GPES_metas.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPESMetas(i: number) {
@@ -585,13 +632,13 @@ export class CreateComponentComponent implements OnInit {
   agregarGPESAB_datos() {
     let asignaturasArr = this.form.get('GPESAB_datos') as FormArray;
     let newAsignatura = this.formBuilder.group({
-      'clave_materia': this.formBuilder.control('', [
+      'clave_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)]),
-      'nombre_materia': this.formBuilder.control('', [
+      'nombre_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)]),
-      'enlace_temario_materia': this.formBuilder.control('', [
+      'enlace_temario_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)])
     })
@@ -608,13 +655,13 @@ export class CreateComponentComponent implements OnInit {
   agregarGPESAO_datos() {
     let asignaturasArr = this.form.get('GPESAO_datos') as FormArray;
     let newAsignatura = this.formBuilder.group({
-      'clave_materia': this.formBuilder.control('', [
+      'clave_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)]),
-      'nombre_materia': this.formBuilder.control('', [
+      'nombre_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)]),
-      'enlace_temario_materia': this.formBuilder.control('', [
+      'enlace_temario_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)])
     })
@@ -629,13 +676,13 @@ export class CreateComponentComponent implements OnInit {
   agregarGPES_seminario_tesis() {
     let asignaturasArr = this.form.get('GPES_seminario_tesis') as FormArray;
     let newAsignatura = this.formBuilder.group({
-      'clave_materia': this.formBuilder.control('', [
+      'clave_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)]),
-      'nombre_materia': this.formBuilder.control('', [
+      'nombre_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)]),
-      'enlace_temario_materia': this.formBuilder.control('', [
+      'enlace_temario_materia': this.formBuilder.control('Esta es información de ejemplo', [
         Validators.required,
         Validators.minLength(5)])
     })
@@ -649,7 +696,7 @@ export class CreateComponentComponent implements OnInit {
 
 
   agregarGPSA_requisitos() {
-    this.GPSA_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.GPSA_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGPSA_requisitos(i: number) {
@@ -657,7 +704,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarGCT_requisitos() {
-    this.GCT_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.GCT_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteGCT_requisitos(i: number) {
@@ -665,7 +712,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarPARI_requisitos() {
-    this.PARI_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.PARI_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deletePARI_requisitos(i: number) {
@@ -673,7 +720,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarPARI_documentos() {
-    this.PARI_documentos.push(this.formBuilder.control('', [Validators.required]))
+    this.PARI_documentos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deletePARI_documentos(i: number) {
@@ -682,7 +729,7 @@ export class CreateComponentComponent implements OnInit {
 
 
   agregarPARP_requisitos() {
-    this.PARP_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.PARP_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
 
@@ -691,7 +738,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarPARE_requisitos() {
-    this.PARE_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.PARE_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deletePARE_requisitos(i: number) {
@@ -699,7 +746,7 @@ export class CreateComponentComponent implements OnInit {
   }
 
   agregarPARE_obtencion_grado_requisitos() {
-    this.PARE_obtencion_grado_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.PARE_obtencion_grado_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deletePARE_obtencion_grado_requisitos(i: number) {
@@ -708,7 +755,7 @@ export class CreateComponentComponent implements OnInit {
 
 
   agregarPAB_requisitos() {
-    this.PAB_requisitos.push(this.formBuilder.control('', [Validators.required]))
+    this.PAB_requisitos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
 
@@ -720,11 +767,11 @@ export class CreateComponentComponent implements OnInit {
   addNADocente() {
     let docentesArr = this.form.get('NADocentes') as FormArray;
     let newDocente = this.formBuilder.group({
-      'DNombre': '',
-      'DGrado_academico': '',
-      'DTiempo': '',
-      'DEspecialidad': '',
-      'DCurriculum': ''
+      'DNombre': 'Esta es información de ejemplo',
+      'DGrado_academico': 'Esta es información de ejemplo',
+      'DTiempo': 'Esta es información de ejemplo',
+      'DEspecialidad': 'Esta es información de ejemplo',
+      'DCurriculum': 'Esta es información de ejemplo'
     })
 
     docentesArr.push(newDocente)
@@ -736,11 +783,31 @@ export class CreateComponentComponent implements OnInit {
     this.NADocentes.removeAt(i)
   }
 
+  addNARepositorio_tesis() {
+    let documentosArr = this.form.get('NARepositorio_tesis') as FormArray;
+    let newDocumento = this.formBuilder.group({
+      'DTitulo': this.formBuilder.control('Esta es información de ejemplo'),
+      'DTipo': this.formBuilder.control('Esta es información de ejemplo'),
+      'DAutores': this.formBuilder.control('Esta es información de ejemplo'),
+      'DFecha': this.formBuilder.control('Esta es información de ejemplo'),
+      'DResumen': this.formBuilder.control('Esta es información de ejemplo'),
+      'DEenlace': this.formBuilder.control('Esta es información de ejemplo')
+    })
+
+    documentosArr.push(newDocumento)
+
+
+  }
+
+  deleteNARepositorio_tesis(i: number) {
+    this.NARepositorio_tesis.removeAt(i)
+  }
+
   addPADescargas() {
     let descargasArr = this.form.get('PADescargas') as FormArray;
     let newDescarga = this.formBuilder.group({
-      'Descargas_nombre': this.formBuilder.control(''),
-      'Descargas_enlace': this.formBuilder.control(''),
+      'Descargas_nombre': this.formBuilder.control('Esta es información de ejemplo'),
+      'Descargas_enlace': this.formBuilder.control('Esta es información de ejemplo'),
     })
 
     descargasArr.push(newDescarga)
@@ -755,21 +822,13 @@ export class CreateComponentComponent implements OnInit {
   addEstudiante() {
     let estudiantesArr = this.form.get('Estudiante') as FormArray;
     let newEstudiante = this.formBuilder.group({
-      'generacion': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(1)]),
-      'ENombre': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(5)]),
-      'ETema_tesis': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(5)]),
-      'ETutor': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(5)]),
-      'EDirector_tesis': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(5)])
+      'generacion': this.formBuilder.control('Esta es información de ejemplo',
+        [Validators.required,
+        Validators.minLength(1)]),
+      'ENombre': this.formBuilder.control('Esta es información de ejemplo'),
+      'ETema_tesis': this.formBuilder.control('Esta es información de ejemplo'),
+      'ETutor': this.formBuilder.control('Esta es información de ejemplo'),
+      'EDirector_tesis': this.formBuilder.control('Esta es información de ejemplo')
     })
 
     estudiantesArr.push(newEstudiante)
@@ -784,12 +843,12 @@ export class CreateComponentComponent implements OnInit {
   agregarVConvenios() {
     let conveniosArr = this.form.get('VConvenios') as FormArray;
     let newConvenio = this.formBuilder.group({
-      'convenio_nombre': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(10)]),
-      'convenio_enlace': this.formBuilder.control('',
-      [Validators.required,
-      Validators.minLength(10)])
+      'convenio_nombre': this.formBuilder.control('Esta es información de ejemplo',
+        [Validators.required,
+        Validators.minLength(10)]),
+      'convenio_enlace': this.formBuilder.control('Esta es información de ejemplo',
+        [Validators.required,
+        Validators.minLength(10)])
 
     })
 
@@ -802,7 +861,7 @@ export class CreateComponentComponent implements OnInit {
 
 
   agregarCTelefonos() {
-    this.CTelefonos.push(this.formBuilder.control('', [Validators.required]))
+    this.CTelefonos.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteCTelefonos(i: number) {
@@ -812,8 +871,8 @@ export class CreateComponentComponent implements OnInit {
   addCRedes() {
     let redesArr = this.form.get('CRedes') as FormArray;
     let newRed = this.formBuilder.group({
-      'RNombre': this.formBuilder.control(''),
-      'RCuenta': this.formBuilder.control('')
+      'RNombre': this.formBuilder.control('Esta es información de ejemplo'),
+      'RCuenta': this.formBuilder.control('Esta es información de ejemplo')
     })
 
     redesArr.push(newRed)
@@ -824,18 +883,26 @@ export class CreateComponentComponent implements OnInit {
   }
 
   addCDireccion() {
-    this.CDireccion.push(this.formBuilder.control('', [Validators.required]))
+    this.CDireccion.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
   }
 
   deleteCDireccion(i: number) {
     this.CDireccion.removeAt(i)
   }
 
+  addCCorreo() {
+    this.CCorreo.push(this.formBuilder.control('Esta es información de ejemplo', [Validators.required]))
+  }
+
+  deleteCCorreo(i: number) {
+    this.CCorreo.removeAt(i)
+  }
+
   addNEInformacion() {
     let normasArr = this.form.get('NEInformacion') as FormArray;
     let newNorma = this.formBuilder.group({
-      'NENombre': this.formBuilder.control(''),
-      'NEEnlace': this.formBuilder.control('')
+      'NENombre': this.formBuilder.control('Esta es información de ejemplo'),
+      'NEEnlace': this.formBuilder.control('Esta es información de ejemplo')
     })
 
     normasArr.push(newNorma)

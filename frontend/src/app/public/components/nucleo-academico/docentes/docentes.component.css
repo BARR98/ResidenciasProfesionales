@@ -19,7 +19,7 @@ p {
 }
 
 .crop-image {
-    height: 300px;
+    height: 200px;
     width: 100%;
     overflow: hidden;
     position: relative;
@@ -44,24 +44,29 @@ a:hover {
     background-color: rgb(8, 104, 182);
 }
 
-mat-card-title {
-    margin-top: 30px;
-    margin-bottom: 30px;
+.mat-card-title {
     color: rgb(6, 73, 128)
 }
 
 mat-card-subtitle {
-    margin-top: 20px;
-    margin-bottom: 20px;
     text-align: justify;
 }
 
 mat-card-header {
-    margin-bottom: 20px;
-    margin-top: 0px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.docente-data {
+    width: 100%;
+    height: auto;
+    text-align: justify;
 }
 
 mat-card {
     margin-left: 20px;
     margin-right: 20px;
+    border-radius: 8px;
 }

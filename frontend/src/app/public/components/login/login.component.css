@@ -10,6 +10,7 @@
 .card {
     width: 50%;
     margin-top: 40px;
+    border-radius: 8px;
 }
 
 .card-body {
@@ -32,4 +33,19 @@
 
 button {
     margin-right: 20px;
+}
+
+.card-header {
+    background-color: #013a63;
+    color: whitesmoke;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

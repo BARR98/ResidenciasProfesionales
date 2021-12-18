@@ -2,9 +2,11 @@ export interface Maestria {
     _id: String
     nombre_maestria: String;
     abreviatura_maestria: String;
-    GObjetivoGeneral: String,
-    GObjetivosEspecificos: [],
-    GMetas: [],
+    GTramites: [];
+    GFechas: [];
+    GObjetivoGeneral: String;
+    GObjetivosEspecificos: [];
+    GMetas: [];
     GPI_start: String;
     GPI_conocimientos_basicos: [];
     GPI_conocimientos_habilidades: [];
@@ -43,12 +45,14 @@ export interface Maestria {
     PAB_requisitos: []
     PADescargas: []
     NADocentes: []
+    NARepositorio_tesis: []
     Estudiante: []
     VInformacion: String;
     VConvenios: []
     CTelefonos: [];
     CRedes: [];
     CDireccion: [];
+    CCorreo: [];
     NEInformacion: [];
 
    /*constructor(

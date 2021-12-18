@@ -6,7 +6,7 @@
 .example-form {
     min-width: 150px;
     max-width: 500px;
-    width: 100%;
+    width: 80%;
 }
 
 .example-full-width {
@@ -52,4 +52,30 @@ mat-card {
 
 textarea {
     height: 70px;
+}
+
+mat-expansion-panel {
+    margin-top: 20px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+mat-panel-title {
+    font-size: 18px;
+    color: #2e546e;
+    font-weight: bold;
+}
+
+mat-panel-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3c4347;
+}
+
+mat-label {
+    color: #256991;
+    font-weight: bold;
 }

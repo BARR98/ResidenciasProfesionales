@@ -29,6 +29,7 @@ mat-card-header {
 
 mat-card-title {
     font-size: 20px;
+    color: rgb(6, 51, 102);
 }
 
 mat-card-content {
@@ -62,6 +63,8 @@ a {
     display: flex;
     align-items: center;
     margin-left: 30px;
+    background-color: rgb(6, 51, 102);
+    color: whitesmoke;
 }
 
 .crop-image {

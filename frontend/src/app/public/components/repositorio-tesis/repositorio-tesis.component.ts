@@ -2,24 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { MaestriasService } from 'src/app/core/services/maestrias/maestrias.service';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 
-
 @Component({
-  selector: 'app-contacto',
-  templateUrl: './contacto.component.html',
-  styleUrls: ['./contacto.component.css']
+  selector: 'app-repositorio-tesis',
+  templateUrl: './repositorio-tesis.component.html',
+  styleUrls: ['./repositorio-tesis.component.css']
 })
-export class ContactoComponent implements OnInit {
+export class RepositorioTesisComponent implements OnInit {
 
-  panelOpenState = true;
+  cpanelOpenState = true;
   _id: string
   master: any
-  telefonos: []
-  redes: []
-  direcciones: []
-  correos:[]
-  facebook: string = "Facebook"
-  red_nombre : string
-  instagram: string = "Instagram"
+  repositorio_tesis: any
+
+
   constructor(
     public maestriasService: MaestriasService,
     private router: Router,
@@ -34,15 +29,12 @@ export class ContactoComponent implements OnInit {
         .subscribe(getedMaster => {
           this.master = getedMaster
           console.log(this.master)
-          this.master = getedMaster
-          this.telefonos = this.master['contacto']['CTelefonos']
-          this.direcciones = this.master['contacto']['CDireccion']
-          this.redes = this.master['contacto']['CRedes']
-          this.correos = this.master['contacto']['CCorreo']
+          this.repositorio_tesis = this.master['docentes']['NARepositorio_tesis']
           
+
+
         });
     });
   }
-
 
 }

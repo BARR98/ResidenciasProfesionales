@@ -6,6 +6,8 @@ const MaestriaSchema = new Schema({
     nombre_maestria: String,
     abreviatura_maestria: String,
     general: {
+        GTramites: [],
+        GFechas: [],
         GObjetivoGeneral: String,
         GObjetivosEspecificos: [],
         GMetas: [],
@@ -81,7 +83,8 @@ const MaestriaSchema = new Schema({
     },
 
     docentes: {
-        NADocentes: []
+        NADocentes: [],
+        NARepositorio_tesis: []
     }
 
     ,
@@ -95,7 +98,8 @@ const MaestriaSchema = new Schema({
     contacto: {
         CTelefonos: [],
         CRedes: [],
-        CDireccion: []
+        CDireccion: [],
+        CCorreo: []
     },
     normas_estatutos: {
         NEInformacion: []

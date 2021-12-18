@@ -55,7 +55,7 @@ mat-expansion-panel {
 }
 
 .contact-info {
-    width: 85%;
+    width: auto;
     margin-top: 40px;
     display: flex;
     flex-direction: row;
@@ -64,5 +64,43 @@ mat-expansion-panel {
 }
 
 p {
-    margin-left: 9px;
+    padding: 0px;
+}
+
+mat-card-header {
+    display: flex;
+    justify-content: start;
+}
+
+.icon,
+.title {
+    width: auto;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-right: 5px;
+}
+
+mat-card-content {
+    display: flex;
+    width: auto;
+    height: auto;
+    align-items: center;
+    text-align: justify;
+}
+
+img {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.switch-case {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    font-size: 18px;
 }

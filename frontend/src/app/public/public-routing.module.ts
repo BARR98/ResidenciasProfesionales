@@ -22,6 +22,7 @@ import { BecasComponent } from './components/procesos-administrativos/becas/beca
 import { DescargasComponent } from './components/procesos-administrativos/descargas/descargas.component';
 import { GeneracionDetailComponent } from './components/estudiantes/generacion-detail/generacion-detail.component';
 import { LoginComponent } from './components/login/login.component';
+import { RepositorioTesisComponent } from './components/repositorio-tesis/repositorio-tesis.component';
 
 const routes: Routes = [
 
@@ -104,6 +105,10 @@ const routes: Routes = [
   {
     path:'login',
     component: LoginComponent 
+  },
+  {
+    path:'repositorio-tesis',
+    component: RepositorioTesisComponent 
   },
   {
     path:'',

@@ -23,6 +23,8 @@ maestriaController.createMaestria = async(req, res) => {
         nombre_maestria: req.body.nombre_maestria,
         abreviatura_maestria: req.body.abreviatura_maestria,
         general: {
+            GTramites: req.body.GTramites,
+            GFechas: req.body.GFechas,
             GObjetivoGeneral: req.body.GObjetivoGeneral,
             GObjetivosEspecificos: req.body.GObjetivosEspecificos,
             GMetas: req.body.GMetas,
@@ -97,7 +99,8 @@ maestriaController.createMaestria = async(req, res) => {
 
         },
         docentes: {
-            NADocentes: req.body.NADocentes
+            NADocentes: req.body.NADocentes,
+            NARepositorio_tesis: req.body.NARepositorio_tesis
         }
 
         ,
@@ -113,7 +116,8 @@ maestriaController.createMaestria = async(req, res) => {
         contacto: {
             CTelefonos: req.body.CTelefonos,
             CRedes: req.body.CRedes,
-            CDireccion: req.body.CDireccion
+            CDireccion: req.body.CDireccion,
+            CCorreo: req.body.CCorreo
         },
         normas_estatutos: {
             NEInformacion: req.body.NEInformacion
@@ -138,6 +142,11 @@ maestriaController.updateMaestria = async(req, res) => {
         nombre_maestria: req.body.nombre_maestria,
         abreviatura_maestria: req.body.abreviatura_maestria,
         general: {
+            GTramites: req.body.GTramites,
+            GFechas: req.body.GFechas,
+            GObjetivoGeneral: req.body.GObjetivoGeneral,
+            GObjetivosEspecificos: req.body.GObjetivosEspecificos,
+            GMetas: req.body.GMetas,
             GPerfil_ingreso: {
                 GPI_start: req.body.GPI_start,
                 GPI_conocimientos_basicos: req.body.GPI_conocimientos_basicos,
@@ -166,7 +175,8 @@ maestriaController.updateMaestria = async(req, res) => {
                 },
                 GPES_asignaturas_optativas: {
                     GPESAOdatos: req.body.GPESAOdatos
-                }
+                },
+                GPES_seminario_tesis: req.body.GPES_seminario_tesis
             },
             GLGAC: req.body.GLGAC,
             GProceso_seleccion_aspirantes: {
@@ -208,7 +218,8 @@ maestriaController.updateMaestria = async(req, res) => {
 
         },
         docentes: {
-            NADocentes: req.body.NADocentes
+            NADocentes: req.body.NADocentes,
+            NARepositorio_tesis: req.body.NARepositorio_tesis
         }
 
         ,
@@ -224,7 +235,8 @@ maestriaController.updateMaestria = async(req, res) => {
         contacto: {
             CTelefonos: req.body.CTelefonos,
             CRedes: req.body.CRedes,
-            CDireccion: req.body.CDireccion
+            CDireccion: req.body.CDireccion,
+            CCorreo: req.body.CCorreo
         },
         normas_estatutos: {
             NEInformacion: req.body.NEInformacion
